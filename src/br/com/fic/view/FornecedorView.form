@@ -479,6 +479,7 @@
                 <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.rgFornecedor}" target="rgFornecedorField" targetPath="text" updateStrategy="0" immediately="false">
                   <Property name="incompletePathValue" type="java.lang.String" value="null"/>
                 </BindingProperty>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="rgFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="rgFornecedorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
               </BindingProperties>
             </Component>
@@ -487,6 +488,7 @@
                 <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.orgaoRgFornecedor}" target="orgaoRgFornecedorField" targetPath="text" updateStrategy="0" immediately="false">
                   <Property name="incompletePathValue" type="java.lang.String" value="null"/>
                 </BindingProperty>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="orgaoRgFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="orgaoRgFornecedorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
               </BindingProperties>
             </Component>
@@ -597,6 +599,7 @@
               </Properties>
               <BindingProperties>
                 <BindingProperty name="value" source="masterTable" sourcePath="${selectedElement.cpfFornecedor}" target="cpfFornecedorField" targetPath="value" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="cpfFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cpfFornecedorField" targetPath="enabled" updateStrategy="0" immediately="false"/>
               </BindingProperties>
               <Events>
