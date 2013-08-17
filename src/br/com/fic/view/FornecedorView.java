@@ -17,6 +17,7 @@ import javax.swing.JPanel;
  * @author i3
  */
 public class FornecedorView extends JPanel {
+   public static FornecedorView fv;
     
     public FornecedorView() {
         initComponents();
@@ -79,8 +80,9 @@ public class FornecedorView extends JPanel {
         jPanel3 = new javax.swing.JPanel();
         saveButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
-        newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        newButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
 
         FormListener formListener = new FormListener();
@@ -293,9 +295,6 @@ public class FornecedorView extends JPanel {
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(formListener);
 
-        newButton.setText("New");
-        newButton.addActionListener(formListener);
-
         deleteButton.setText("Delete");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -303,12 +302,18 @@ public class FornecedorView extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
+        newButton.setText("New");
+        newButton.addActionListener(formListener);
+
+        jButton1.setText("Buscar CEP");
+        jButton1.addActionListener(formListener);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(28, 28, 28)
                 .addComponent(newButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deleteButton)
@@ -316,7 +321,11 @@ public class FornecedorView extends JPanel {
                 .addComponent(refreshButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveButton)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(117, 117, 117))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton, refreshButton, saveButton});
@@ -330,7 +339,9 @@ public class FornecedorView extends JPanel {
                     .addComponent(refreshButton)
                     .addComponent(deleteButton)
                     .addComponent(newButton))
-                .addGap(47, 47, 47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "F", "J" }));
@@ -379,7 +390,11 @@ public class FornecedorView extends JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tipoFornecedorLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cepFornecedorLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cepFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cpfFornecedorLabel)
@@ -392,7 +407,7 @@ public class FornecedorView extends JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(orgaoRgFornecedorLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(orgaoRgFornecedorField)))
+                        .addComponent(orgaoRgFornecedorField, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,18 +421,10 @@ public class FornecedorView extends JPanel {
                         .addComponent(emailFornecedorField)))
                 .addGap(121, 121, 121))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(foneFornecedorLabel)
-                    .addComponent(cepFornecedorLabel))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cepFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(88, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(foneFornecedorField)
-                        .addContainerGap())))
+                .addComponent(foneFornecedorLabel)
+                .addGap(40, 40, 40)
+                .addComponent(foneFornecedorField)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(faxFornecedorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -458,7 +465,9 @@ public class FornecedorView extends JPanel {
                     .addComponent(cnpjFornecedorLabel)
                     .addComponent(cnpjFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tipoFornecedorLabel)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cepFornecedorLabel)
+                    .addComponent(cepFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(enderecoFornecedorLabel)
@@ -481,11 +490,7 @@ public class FornecedorView extends JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailFornecedorLabel)
                     .addComponent(siteFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cepFornecedorLabel)
-                    .addComponent(cepFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(foneFornecedorLabel)
                     .addComponent(foneFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -503,7 +508,7 @@ public class FornecedorView extends JPanel {
                     .addComponent(contatoFornecedorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -561,6 +566,9 @@ public class FornecedorView extends JPanel {
             }
             else if (evt.getSource() == deleteButton) {
                 FornecedorView.this.deleteButtonActionPerformed(evt);
+            }
+            else if (evt.getSource() == jButton1) {
+                FornecedorView.this.jButton1ActionPerformed(evt);
             }
         }
 
@@ -657,6 +665,12 @@ String textoOriginal;
         // TODO add your handling code here:
     }//GEN-LAST:event_cpfFornecedorFieldActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        BuscaCepView bcv = new BuscaCepView();
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField bairroFornecedorField;
     private javax.swing.JLabel bairroFornecedorLabel;
@@ -682,6 +696,7 @@ String textoOriginal;
     private javax.swing.JLabel faxFornecedorLabel;
     private javax.swing.JTextField foneFornecedorField;
     private javax.swing.JLabel foneFornecedorLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -735,12 +750,46 @@ String textoOriginal;
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame();
-                frame.setContentPane(new FornecedorView());
+                fv = new FornecedorView();
+                frame.setContentPane(fv);
                // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setTitle(args[0]);
             }
         });
+    }
+
+    /**
+     * @param bairroFornecedorField the bairroFornecedorField to set
+     */
+    public void setBairroFornecedorField(String bairroFornecedorField) {
+        this.bairroFornecedorField.setText(bairroFornecedorField);
+    }
+
+    /**
+     * @param cepFornecedorField the cepFornecedorField to set
+     */
+    public void setCepFornecedorField(String cepFornecedorField) {
+        this.cepFornecedorField.setText(cepFornecedorField);
+    }
+
+    /**
+     * @param cidadeFornecedorField the cidadeFornecedorField to set
+     */
+    public void setCidadeFornecedorField(String cidadeFornecedorField) {
+        this.cidadeFornecedorField.setText(cidadeFornecedorField); 
+    }
+
+    /**
+     * @param enderecoFornecedorField the enderecoFornecedorField to set
+     */
+    public void setEnderecoFornecedorField(String enderecoFornecedorField) {
+        this.enderecoFornecedorField.setText(enderecoFornecedorField);
+    }
+
+
+    public void setUfFornecedorField(String ufFornecedorField) {
+        this.ufFornecedorField.setText(ufFornecedorField);
     }
 }

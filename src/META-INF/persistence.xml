@@ -8,6 +8,9 @@
     <class>br.com.fic.bean.Cliente</class>
     <class>br.com.fic.bean.ClienteEndereco</class>
     <class>br.com.fic.bean.Fornecedor</class>
+    <class>br.com.fic.bean.Produto</class>
+    <class>br.com.fic.bean.Unidade</class>
+    <class>br.com.fic.bean.CorreiosCeps</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fic_java?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>

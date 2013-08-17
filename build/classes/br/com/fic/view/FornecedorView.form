@@ -221,6 +221,10 @@
                                               <Component id="tipoFornecedorLabel" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jComboBox1" min="-2" pref="56" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cepFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cepFornecedorField" min="-2" pref="71" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -238,7 +242,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="orgaoRgFornecedorLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="orgaoRgFornecedorField" max="32767" attributes="0"/>
+                              <Component id="orgaoRgFornecedorField" pref="108" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -259,22 +263,10 @@
                       <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="foneFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="cepFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cepFornecedorField" min="-2" pref="418" max="-2" attributes="0"/>
-                              <EmptySpace pref="88" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="foneFornecedorField" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="foneFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="foneFornecedorField" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="faxFornecedorLabel" min="-2" max="-2" attributes="0"/>
@@ -325,6 +317,8 @@
                           <Component id="cnpjFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tipoFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cepFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cepFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -353,12 +347,7 @@
                           <Component id="emailFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="siteFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cepFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cepFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="foneFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="foneFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -380,7 +369,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -479,6 +468,7 @@
                 <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.rgFornecedor}" target="rgFornecedorField" targetPath="text" updateStrategy="0" immediately="false">
                   <Property name="incompletePathValue" type="java.lang.String" value="null"/>
                 </BindingProperty>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="rgFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="rgFornecedorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
               </BindingProperties>
             </Component>
@@ -487,6 +477,7 @@
                 <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.orgaoRgFornecedor}" target="orgaoRgFornecedorField" targetPath="text" updateStrategy="0" immediately="false">
                   <Property name="incompletePathValue" type="java.lang.String" value="null"/>
                 </BindingProperty>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="orgaoRgFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="orgaoRgFornecedorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
               </BindingProperties>
             </Component>
@@ -597,6 +588,7 @@
               </Properties>
               <BindingProperties>
                 <BindingProperty name="value" source="masterTable" sourcePath="${selectedElement.cpfFornecedor}" target="cpfFornecedorField" targetPath="value" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="editable" source="jComboBox1" sourcePath="${selectedItem == &apos;F&apos;}" target="cpfFornecedorField" targetPath="editable" updateStrategy="0" immediately="false"/>
                 <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cpfFornecedorField" targetPath="enabled" updateStrategy="0" immediately="false"/>
               </BindingProperties>
               <Events>
@@ -616,7 +608,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -624,7 +616,12 @@
                           <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -638,7 +635,9 @@
                               <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -668,18 +667,6 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="newButton">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="New"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newButtonActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-                  </AuxValues>
-                </Component>
                 <Component class="javax.swing.JButton" name="deleteButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Delete"/>
@@ -694,6 +681,26 @@
                     <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
                   </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="newButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="New"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newButtonActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Buscar CEP"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
