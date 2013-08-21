@@ -11,6 +11,11 @@
     <class>br.com.fic.bean.Produto</class>
     <class>br.com.fic.bean.Unidade</class>
     <class>br.com.fic.bean.CorreiosCeps</class>
+    <class>br.com.fic.bean.PlanoConta</class>
+    <class>br.com.fic.bean.Funcionario</class>
+    <class>br.com.fic.bean.Departamento</class>
+    <class>br.com.fic.bean.VendaCab</class>
+    <class>br.com.fic.bean.VendaDet</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fic_java?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>

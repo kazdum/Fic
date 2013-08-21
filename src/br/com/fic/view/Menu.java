@@ -230,6 +230,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem7.setMnemonic('n');
         jMenuItem7.setText("Funcionario");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem7);
         jMenu1.add(jSeparator3);
 
@@ -246,6 +251,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setMnemonic('P');
         jMenuItem9.setText("Plano de Contas");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
@@ -280,6 +290,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem13);
 
         jMenuItem16.setText("Vendas");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem16);
 
         jMenu6.setText("Controle de Estoque");
@@ -386,7 +401,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
           String args[] = new String[1];
-         args[0] = "Cadastro de Cartões";
+         args[0] = "Cadastro de Fornecedores";
         FornecedorView.main(args);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -397,7 +412,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
+        String args[] = new String[1];
+        args[0] = "Cadastro de Departamento";
+        DepartamentoView.main(args);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -449,6 +466,24 @@ public class Menu extends javax.swing.JFrame {
          args[0] = "Cadastro de Produtos";
          ProdutoView.main(args);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+         String args[] = new String[1];
+         args[0] = "Cadastro de Contas";
+         PlanoContaView.main(args);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+         String args[] = new String[1];
+         args[0] = "Cadastro de Funcionarios";
+         FuncionarioView.main(args);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        String args[] = new String[1];
+         args[0] = "Movimento - Vendas";
+         MovimentoVenda.main(args);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     /**
      * @param args the command line arguments

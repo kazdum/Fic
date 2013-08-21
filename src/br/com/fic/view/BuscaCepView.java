@@ -17,6 +17,7 @@ import javax.swing.JPanel;
  * @author i3
  */
 public class BuscaCepView extends JPanel {
+    private static JFrame frame ;
     
     public BuscaCepView() {
         initComponents();
@@ -36,7 +37,7 @@ public class BuscaCepView extends JPanel {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fic_java?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM CorreiosCeps c");
+        query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM CorreiosCeps c WHERE c.estado =\"AC\"");
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         rowSorterToStringConverter1 = new br.com.fic.converer.RowSorterToStringConverter();
         masterScrollPane = new javax.swing.JScrollPane();
@@ -73,11 +74,9 @@ public class BuscaCepView extends JPanel {
         saveButton.setText("Importar");
         saveButton.addActionListener(formListener);
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${rowSorter}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"), "");
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${rowSorter}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text_ON_ACTION_OR_FOCUS_LOST"), "");
         binding.setConverter(rowSorterToStringConverter1);
         bindingGroup.addBinding(binding);
-
-        jTextField1.addActionListener(formListener);
 
         jLabel1.setText("Localizar:");
 
@@ -122,19 +121,17 @@ public class BuscaCepView extends JPanel {
             if (evt.getSource() == saveButton) {
                 BuscaCepView.this.saveButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == jTextField1) {
-                BuscaCepView.this.jTextField1ActionPerformed(evt);
-            }
         }
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        // TODO add your handling code here:
+        FornecedorView.fv.setBairroFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 2));
+        FornecedorView.fv.setCepFornecedorField(String.valueOf(masterTable.getValueAt(masterTable.getSelectedRow(), 0)));
+        FornecedorView.fv.setCidadeFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 3));
+        FornecedorView.fv.setEnderecoFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 1));
+        FornecedorView.fv.setUfFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 4));
+        frame.dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-       FornecedorView.fv.setBairroFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 4));
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     
 
@@ -151,7 +148,7 @@ public class BuscaCepView extends JPanel {
     private javax.swing.JButton saveButton;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -178,11 +175,12 @@ public class BuscaCepView extends JPanel {
         /* Create and display the form */
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JFrame frame = new JFrame();
+               frame = new JFrame();
                 frame.setContentPane(new BuscaCepView());
                // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+                frame.setTitle(args[0]);
             }
         });
     }

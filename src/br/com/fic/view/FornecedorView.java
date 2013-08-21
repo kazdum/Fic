@@ -561,11 +561,11 @@ public class FornecedorView extends JPanel {
             else if (evt.getSource() == refreshButton) {
                 FornecedorView.this.refreshButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == newButton) {
-                FornecedorView.this.newButtonActionPerformed(evt);
-            }
             else if (evt.getSource() == deleteButton) {
                 FornecedorView.this.deleteButtonActionPerformed(evt);
+            }
+            else if (evt.getSource() == newButton) {
+                FornecedorView.this.newButtonActionPerformed(evt);
             }
             else if (evt.getSource() == jButton1) {
                 FornecedorView.this.jButton1ActionPerformed(evt);
@@ -666,8 +666,9 @@ String textoOriginal;
     }//GEN-LAST:event_cpfFornecedorFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        BuscaCepView bcv = new BuscaCepView();
-        
+         String args[] = new String[1];
+         args[0] = "Busca pelo CEP e Importa Dados";
+         BuscaCepView.main(args);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
