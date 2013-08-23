@@ -171,7 +171,7 @@ public class Funcionario implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Funcionario[ codFuncionario=" + codFuncionario + " ]";
+        return "br.com.fic.bean.Funcionario[ codFuncionario=" + codFuncionario + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -89,7 +89,7 @@ public class PlanoConta implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.PlanoConta[ codPlanoConta=" + codPlanoConta + " ]";
+        return "br.com.fic.bean.PlanoConta[ codPlanoConta=" + codPlanoConta + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

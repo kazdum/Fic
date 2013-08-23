@@ -58,6 +58,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem29 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem23 = new javax.swing.JMenuItem();
@@ -297,6 +298,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem16);
 
+        jMenuItem29.setText("Orçamento");
+        jMenuItem29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem29ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem29);
+
         jMenu6.setText("Controle de Estoque");
 
         jMenuItem14.setText("Entrada de NF");
@@ -485,6 +494,12 @@ public class Menu extends javax.swing.JFrame {
          MovimentoVenda.main(args);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
+    private void jMenuItem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem29ActionPerformed
+         String args[] = new String[1];
+         args[0] = "Movimento - Orçamento";
+         MovimentoOrcamentoVenda.main(args);
+    }//GEN-LAST:event_jMenuItem29ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -557,6 +572,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem28;
+    private javax.swing.JMenuItem jMenuItem29;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

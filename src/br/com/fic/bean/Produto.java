@@ -170,7 +170,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Produto[ codProduto=" + codProduto + " ]";
+        return "br.com.fic.bean.Produto[ codProduto=" + codProduto + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

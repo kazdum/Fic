@@ -46,7 +46,16 @@ public class VendaDet implements Serializable {
     @JoinColumn(name = "COD_VENDA_CAB", referencedColumnName = "COD_VENDA_CAB", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private VendaCab vendaCab;
+    @Transient
+    private String descricaoProduto;
+    
+    public void setDescricaoProduto(String desc){
+        this.descricaoProduto = desc;
+    }
 
+    public String getDescricaoProduto(){
+        return descricaoProduto;
+    }
     public VendaDet() {
     }
 
@@ -128,7 +137,7 @@ public class VendaDet implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.VendaDet[ vendaDetPK=" + vendaDetPK + " ]";
+        return "br.com.fic.bean.VendaDet[ vendaDetPK=" + vendaDetPK + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

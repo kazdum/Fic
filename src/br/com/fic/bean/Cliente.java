@@ -289,7 +289,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Cliente[ codCliente=" + codCliente + " ]";
+        return "br.com.fic.bean.Cliente[ codCliente=" + codCliente + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

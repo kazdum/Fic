@@ -72,7 +72,7 @@ public class VendaDetPK implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.VendaDetPK[ codVendaCab=" + codVendaCab + ", codProduto=" + codProduto + " ]";
+        return "br.com.fic.bean.VendaDetPK[ codVendaCab=" + codVendaCab + ", codProduto=" + codProduto + " ]";
     }
     
 }

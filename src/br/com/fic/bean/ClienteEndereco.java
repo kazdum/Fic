@@ -170,7 +170,7 @@ public class ClienteEndereco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.ClienteEndereco[ codEndereco=" + codEndereco + " ]";
+        return "br.com.fic.bean.ClienteEndereco[ codEndereco=" + codEndereco + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -297,7 +297,7 @@ public class Fornecedor implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Fornecedor[ codFornecedor=" + codFornecedor + " ]";
+        return "br.com.fic.bean.Fornecedor[ codFornecedor=" + codFornecedor + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

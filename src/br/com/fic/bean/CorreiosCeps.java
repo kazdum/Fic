@@ -155,7 +155,7 @@ public class CorreiosCeps implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.CorreiosCeps[ id=" + id + " ]";
+        return "br.com.fic.bean.CorreiosCeps[ id=" + id + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

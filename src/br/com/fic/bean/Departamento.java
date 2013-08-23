@@ -89,7 +89,7 @@ public class Departamento implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Departamento[ codDepartamento=" + codDepartamento + " ]";
+        return "br.com.fic.bean.Departamento[ codDepartamento=" + codDepartamento + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

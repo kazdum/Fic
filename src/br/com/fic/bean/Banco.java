@@ -141,7 +141,7 @@ public class Banco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Banco[ codBanco=" + codBanco + " ]";
+        return "br.com.fic.bean.Banco[ codBanco=" + codBanco + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

@@ -251,7 +251,7 @@ public class VendaCab implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.VendaCab[ codVendaCab=" + codVendaCab + " ]";
+        return "br.com.fic.bean.VendaCab[ codVendaCab=" + codVendaCab + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

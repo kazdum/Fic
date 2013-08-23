@@ -89,7 +89,7 @@ public class Unidade implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Unidade[ codUnidade=" + codUnidade + " ]";
+        return "br.com.fic.bean.Unidade[ codUnidade=" + codUnidade + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

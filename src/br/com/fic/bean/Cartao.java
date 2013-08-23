@@ -103,7 +103,7 @@ public class Cartao implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.fic.view.Cartao[ codCartao=" + codCartao + " ]";
+        return "br.com.fic.bean.Cartao[ codCartao=" + codCartao + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
