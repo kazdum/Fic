@@ -4,6 +4,10 @@
  */
 package br.com.fic.view;
 
+import br.com.fic.bean.Cliente;
+import br.com.fic.bean.OrcDetPK;
+import br.com.fic.bean.Produto;
+import br.com.fic.bean.VendaDetPK;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
@@ -13,6 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.RollbackException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -41,6 +46,7 @@ public class MovimentoOrcamentoVenda extends JPanel {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fic_java?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT O FROM OrcCab O");
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
+        clienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Cliente c");
         jPanel1 = new javax.swing.JPanel();
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
@@ -99,6 +105,8 @@ public class MovimentoOrcamentoVenda extends JPanel {
 
         jLabel2.setText("Cliente:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        jTextField2.addFocusListener(formListener);
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 50, -1));
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 153));
@@ -233,7 +241,7 @@ public class MovimentoOrcamentoVenda extends JPanel {
 
     // Code for dispatching events from components to event handlers.
 
-    private class FormListener implements java.awt.event.ActionListener {
+    private class FormListener implements java.awt.event.ActionListener, java.awt.event.FocusListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             if (evt.getSource() == saveButton) {
@@ -250,6 +258,15 @@ public class MovimentoOrcamentoVenda extends JPanel {
             }
             else if (evt.getSource() == newButton) {
                 MovimentoOrcamentoVenda.this.newButtonActionPerformed(evt);
+            }
+        }
+
+        public void focusGained(java.awt.event.FocusEvent evt) {
+        }
+
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            if (evt.getSource() == jTextField2) {
+                MovimentoOrcamentoVenda.this.jTextField2FocusLost(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -286,14 +303,22 @@ public class MovimentoOrcamentoVenda extends JPanel {
             O.setOrcDetList((List) os);
         }
         br.com.fic.bean.OrcDet o = new br.com.fic.bean.OrcDet();
-        entityManager.persist(o);
+         br.com.fic.bean.VendaDet v = new br.com.fic.bean.VendaDet();
+
+        OrcDetPK vpk = new OrcDetPK();
+        
+        
+        vpk.setCodOrcCab(O.getCodOrcCab());
+        o.setOrcDetPK(vpk);
+        ImportaProduto ip = new ImportaProduto(null, true);
+        ip.recebeObjeto(o);
+        ip.setVisible(true);
         o.setOrcCab(O);
-        os.add(o);
-        masterTable.clearSelection();
-        masterTable.setRowSelectionInterval(index, index);
-        int row = os.size() - 1;
-        detailTable.setRowSelectionInterval(row, row);
-        detailTable.scrollRectToVisible(detailTable.getCellRect(row, 0, true));
+        javax.persistence.Query produtoQuery = entityManager.createNamedQuery("Produto.findByCodProduto");
+        produtoQuery.setParameter("codProduto", o.getOrcDetPK().getCodProduto());
+        List<Produto> data = produtoQuery.getResultList();
+        v.setDescricaoProduto(data.get(0).getDescricaoProduto());
+        entityManager.persist(v);
     }//GEN-LAST:event_newDetailButtonActionPerformed
     
 
@@ -316,6 +341,8 @@ public class MovimentoOrcamentoVenda extends JPanel {
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
+        jTextField2.requestFocus();
+        jTextField1.setEnabled(false);
     }//GEN-LAST:event_newButtonActionPerformed
     
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -334,7 +361,20 @@ public class MovimentoOrcamentoVenda extends JPanel {
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+         try {
+            clienteQuery = entityManager.createNamedQuery("Cliente.findByCodCliente");
+            clienteQuery.setParameter("codCliente", Integer.parseInt(jTextField2.getText()));
+            List<Cliente> dados = clienteQuery.getResultList();
+            jTextField3.setText(dados.get(0).getNomeCliente());
+        } catch(Exception e) {   
+            JOptionPane.showMessageDialog(null, "Oorreu um Erro");
+          e.printStackTrace();
+        }
+    }//GEN-LAST:event_jTextField2FocusLost
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.persistence.Query clienteQuery;
     private javax.swing.JButton deleteDetailButton;
     private javax.swing.JScrollPane detailScrollPane;
     private javax.swing.JTable detailTable;

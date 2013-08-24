@@ -727,7 +727,7 @@ public class MovimentoVenda extends JPanel {
     private javax.swing.JTable masterTable;
     private javax.swing.JButton newButton;
     private javax.swing.JButton newDetailButton;
-    private javax.persistence.Query produtoQuery;
+    public javax.persistence.Query produtoQuery;
     private javax.persistence.Query query;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton saveButton;

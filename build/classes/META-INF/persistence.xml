@@ -18,6 +18,12 @@
     <class>br.com.fic.bean.VendaDet</class>
     <class>br.com.fic.bean.OrcDet</class>
     <class>br.com.fic.bean.OrcCab</class>
+    <class>br.com.fic.bean.CotDet</class>
+    <class>br.com.fic.bean.CotCab</class>
+    <class>br.com.fic.bean.ReqDet</class>
+    <class>br.com.fic.bean.ReqCab</class>
+    <class>br.com.fic.bean.PedidoDet</class>
+    <class>br.com.fic.bean.PedidoCab</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fic_java?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>

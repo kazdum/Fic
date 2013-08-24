@@ -4,6 +4,7 @@
  */
 package br.com.fic.view;
 
+import br.com.fic.bean.OrcDet;
 import br.com.fic.bean.VendaDet;
 
 /**
@@ -108,9 +109,16 @@ public class ImportaProduto extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     if(v != null){
      this.v.setVlrUnitVendaDet((Double)jTable1.getValueAt(jTable1.getSelectedRow(), 5));
      this.v.getVendaDetPK().setCodProduto((String)jTable1.getValueAt(jTable1.getSelectedRow(),0));
      this.dispose();
+     }
+     if(o != null){
+     this.o.setVlrUnitOrcDet((Double)jTable1.getValueAt(jTable1.getSelectedRow(), 5));
+     this.o.getOrcDetPK().setCodProduto((String)jTable1.getValueAt(jTable1.getSelectedRow(),0));
+     this.dispose();
+     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -168,9 +176,14 @@ public class ImportaProduto extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
 private VendaDet v;
+private OrcDet o;
 
-public void recebeObjeto(VendaDet v){
-    this.v = v;
+public void recebeObjeto(Object v){
+    if(v instanceof VendaDet)
+    this.v = (VendaDet)v;
+    if(v instanceof OrcDet){
+        this.o =(OrcDet)v;
+    }
 }
 
 
