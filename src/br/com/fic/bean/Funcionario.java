@@ -35,6 +35,7 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Funcionario.findByFuncaoFuncionario", query = "SELECT f FROM Funcionario f WHERE f.funcaoFuncionario = :funcaoFuncionario"),
     @NamedQuery(name = "Funcionario.findByLoginFuncionario", query = "SELECT f FROM Funcionario f WHERE f.loginFuncionario = :loginFuncionario"),
     @NamedQuery(name = "Funcionario.findBySenhaFuncionario", query = "SELECT f FROM Funcionario f WHERE f.senhaFuncionario = :senhaFuncionario"),
+    @NamedQuery(name = "Funcionario.verificaLogin", query = "SELECT f FROM Funcionario f WHERE f.senhaFuncionario = :senhaFuncionario and f.loginFuncionario = :loginFuncionario"),
     @NamedQuery(name = "Funcionario.findByAdmissaoFuncionario", query = "SELECT f FROM Funcionario f WHERE f.admissaoFuncionario = :admissaoFuncionario"),
     @NamedQuery(name = "Funcionario.findByAcessoTotal", query = "SELECT f FROM Funcionario f WHERE f.acessoTotal = :acessoTotal")})
 public class Funcionario implements Serializable {

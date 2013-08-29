@@ -24,6 +24,7 @@
     <class>br.com.fic.bean.ReqCab</class>
     <class>br.com.fic.bean.PedidoDet</class>
     <class>br.com.fic.bean.PedidoCab</class>
+    <class>br.com.fic.view.NivelAcesso</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fic_java?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value=""/>

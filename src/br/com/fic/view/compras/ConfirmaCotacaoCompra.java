@@ -506,7 +506,7 @@ public class ConfirmaCotacaoCompra extends JPanel {
 
         newDetailButton.addActionListener(formListener);
 
-        newButton.setText("New");
+        newButton.setText("Acessar Cotação");
         newButton.addActionListener(formListener);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -528,8 +528,6 @@ public class ConfirmaCotacaoCompra extends JPanel {
                 .addComponent(newDetailButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton});
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteDetailButton, newDetailButton, refreshButton, saveButton});
 
@@ -784,10 +782,11 @@ public class ConfirmaCotacaoCompra extends JPanel {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new ConfirmaCotacaoCompra());
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+              //  frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setTitle(args[0]);
+                
             }
         });
     }

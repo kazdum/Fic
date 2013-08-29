@@ -4,6 +4,7 @@
  */
 package br.com.fic.view;
 
+import br.com.fic.view.compras.ConfirmaCotacaoCompra;
 import br.com.fic.view.compras.CotacaoCompra;
 
 /**
@@ -332,6 +333,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem17);
 
         jMenuItem18.setText("Confirma Cotação");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem18);
 
         jMenuItem19.setText("Pedido");
@@ -512,6 +518,12 @@ public class Menu extends javax.swing.JFrame {
          args[0] = "Movimento - Cotação Compras";
          CotacaoCompra.main(args);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+         String args[] = new String[1];
+         args[0] = "Movimento - Confirma Cotação";
+         ConfirmaCotacaoCompra.main(args);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     /**
      * @param args the command line arguments
